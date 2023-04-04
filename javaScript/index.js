@@ -14,7 +14,9 @@ function showCity() {
 
 function changeCity(event) {
   let cityTimeZone = event.target.value;
-
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   if (cityTimeZone.length > 0) {
     let cityTime = moment().tz(cityTimeZone);
     let city = cityTimeZone.replace("_", " ").split("/")[1];
