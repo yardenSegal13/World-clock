@@ -51,7 +51,7 @@ function changeCity(event) {
         <div class="time"><small>
        
     </small></div></div>
-    
+     <a href="/" class="back"> Home page</a>
      `;
   }
 }
