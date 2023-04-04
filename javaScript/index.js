@@ -29,6 +29,7 @@ function changeCity(event) {
         <div class="time">${cityTime.format("h:mm:ss")}<small>${cityTime.format(
       "A"
     )}</small></div></div>
+    <a href="/" class="back"> Home page</a>
      `;
   } else {
     let cityBlock = document.querySelector("#cities");
@@ -40,6 +41,7 @@ function changeCity(event) {
         <div class="time"><small>
        
     </small></div></div>
+    
      `;
   }
 }

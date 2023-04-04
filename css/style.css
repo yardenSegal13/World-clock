@@ -58,6 +58,11 @@ small {
   text-align: left;
 }
 
+.back {
+  display: block;
+  text-align: left;
+}
+
 footer {
   text-align: center;
 }
