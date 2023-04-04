@@ -3,7 +3,7 @@ function showCity() {
   if (newYorkElement) {
     let newYorkTime = newYorkElement.querySelector(".time");
     let newYorkDate = newYorkElement.querySelector(".date");
-    newYorkTime.innerHTML = moment().tz("America/New_York").format("H:mm:ss");
+    newYorkTime.innerHTML = moment().tz("America/New_York").format("HH:mm:ss");
     newYorkDate.innerHTML = moment()
       .tz("America/New_York")
       .format(`D MMMM YYYY`);
@@ -12,14 +12,14 @@ function showCity() {
   if (tokyoElement) {
     let tokyoTime = tokyoElement.querySelector(".time");
     let tokyoDate = tokyoElement.querySelector(".date");
-    tokyoTime.innerHTML = moment().tz("Asia/Tokyo").format("H:mm:ss");
+    tokyoTime.innerHTML = moment().tz("Asia/Tokyo").format("HH:mm:ss");
     tokyoDate.innerHTML = moment().tz("Asia/Tokyo").format(`D MMMM YYYY`);
   }
   let alaskaElement = document.querySelector("#alaska");
   if (alaskaElement) {
     let alaskaTime = alaskaElement.querySelector(".time");
     let alaskaDate = alaskaElement.querySelector(".date");
-    alaskaTime.innerHTML = moment().tz("US/Alaska").format("H:mm:ss");
+    alaskaTime.innerHTML = moment().tz("US/Alaska").format("HH:mm:ss");
     alaskaDate.innerHTML = moment().tz("US/Alaska").format(`D MMMM YYYY`);
   }
 }
@@ -38,7 +38,7 @@ function changeCity(event) {
           <h2>${city}</h2>
           <div class="date">${cityTime.format("D MMMM YYYY")}</div>
         </div>
-        <div class="time">${cityTime.format("H:mm:ss")}</div></div>
+        <div class="time">${cityTime.format("HH:mm:ss")}</div></div>
     <a href="/" class="back"> Home page</a>
      `;
   } else {
