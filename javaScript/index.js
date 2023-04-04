@@ -25,15 +25,16 @@ function showCity() {
 }
 
 function changeCity(event) {
-  let cityTimeZone = event.target.value;
-  if (cityTimeZone === "current") {
-    cityTimeZone = moment.tz.guess();
-  }
-  if (cityTimeZone.length > 0) {
-    let cityTime = moment().tz(cityTimeZone);
-    let city = cityTimeZone.replace("_", " ").split("/")[1];
-    let cityBlock = document.querySelector("#cities");
-    cityBlock.innerHTML = `<div class="city">
+  setInterval(function () {
+    let cityTimeZone = event.target.value;
+    if (cityTimeZone === "current") {
+      cityTimeZone = moment.tz.guess();
+    }
+    if (cityTimeZone.length > 0) {
+      let cityTime = moment().tz(cityTimeZone);
+      let city = cityTimeZone.replace("_", " ").split("/")[1];
+      let cityBlock = document.querySelector("#cities");
+      cityBlock.innerHTML = `<div class="city">
         <div class="date-block">
           <h2>${city}</h2>
           <div class="date">${cityTime.format("D MMMM YYYY")}</div>
@@ -41,9 +42,9 @@ function changeCity(event) {
         <div class="time">${cityTime.format("HH:mm:ss")}</div></div>
     <a href="/" class="back"> Home page</a>
      `;
-  } else {
-    let cityBlock = document.querySelector("#cities");
-    cityBlock.innerHTML = `<div class="city">
+    } else {
+      let cityBlock = document.querySelector("#cities");
+      cityBlock.innerHTML = `<div class="city">
         <div class="date-block">
           <h2>Please select a city 😉</h2>
           <div class="date"></div>
@@ -53,7 +54,8 @@ function changeCity(event) {
     </small></div></div>
      <a href="/" class="back"> Home page</a>
      `;
-  }
+    }
+  }, 1000);
 }
 
 let selectCityElement = document.querySelector("#select-city");
